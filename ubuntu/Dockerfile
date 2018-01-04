@@ -1,4 +1,4 @@
-FROM devgeniem/wordpress-server:debian-php7.0
+FROM ci.gpilvi.com:5000/devgeniem/docker-wordpress-ubuntu:latest
 MAINTAINER Onni Hakala - Geniem Oy. <onni.hakala@geniem.com>
 
 ENV \
@@ -18,9 +18,9 @@ ENV \
 # Install xdebug
 RUN \
 
-    # Install package from dotdeb
+    # Install package from official repo
     apt-get update \
-    && apt-get install -y php7.0-xdebug php7.0-mongodb php7.0-mcrypt \
+    && apt-get install -y php7.1-xdebug \
 
     # Install mcrypt
     && apt-get install libmcrypt-dev \
